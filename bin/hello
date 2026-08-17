@@ -1,0 +1,18 @@
+#!/bin/bash
+# Dummy command showing the bin/ pattern: a standalone executable on your PATH.
+# Use bin/ for scripts with no third-party dependencies. Use src/ when you need pip packages.
+set -e
+
+usage() {
+  echo "Usage: hello <name>"
+  echo ""
+  echo "Prints a greeting. Replace this script with your own tool."
+}
+
+if [ -z "$1" ] || [ "$1" = "--help" ] || [ "$1" = "-h" ]; then
+  usage
+  [ -z "$1" ] && exit 1
+  exit 0
+fi
+
+echo "Hello, $*."
